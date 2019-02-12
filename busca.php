@@ -11,6 +11,7 @@
 			$name = fgets(STDIN);
 			$name = trim(ucwords($name));
 			$chave = "/(?i){$name}/";
+			$contador = 0;
 
 			foreach ($meuArray as $collection) {
 				if (preg_match($chave, $collection[0]." ".$collection[1]) or preg_match($chave, $collection[3])) {
@@ -18,6 +19,9 @@
 					print_r($result);
 					echo "\n";
 				}
+			}
+			if ($contador==0) {
+				fwrite(STDOUT, "Nenhum dado encontrado!");
 			}
 			fclose($fh);
 			exit(0);
