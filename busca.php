@@ -18,6 +18,7 @@
 					$result = array_combine($meuArray[0], $collection);
 					print_r($result);
 					echo "\n";
+					$contador++;
 				}
 			}
 			if ($contador==0) {
